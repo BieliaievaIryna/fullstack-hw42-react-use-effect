@@ -1,7 +1,7 @@
-import DataFetcher from "./components/DataFetcher"
+import DataFetcher from "./components/DataFetcher";
 
 const App = () => {
-  
+
   return (
     <div>
       <DataFetcher />

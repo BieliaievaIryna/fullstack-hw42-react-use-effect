@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type User from "../types/User.interface";
+import type { User } from "../types/User.interface";
 import { fetchUserById } from "../utils/api";
 
 const DataFetcher = () => {
@@ -26,7 +26,11 @@ const DataFetcher = () => {
   }, [userId]);
 
   const handleNextUser = () => {
-    setUserId((prev) => (prev < 10 ? prev + 1 : 1));
+    if (!userId) {
+      setUserId(userId + 1);
+      return;
+    }
+    setUserId((prev) => prev + 1);
   };
 
   return (

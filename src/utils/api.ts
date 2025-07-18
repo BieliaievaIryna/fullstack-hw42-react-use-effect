@@ -1,9 +1,9 @@
 import axios from "axios";
-import type User from "../types/User.interface";
+import type { User } from "../types/User.interface";
 
 export const fetchUserById = async (id: number): Promise<User> => {
   try {
-    await new Promise((resolve) => setTimeout(resolve, 2000)); 
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
     return response.data;
   } catch (error) {
